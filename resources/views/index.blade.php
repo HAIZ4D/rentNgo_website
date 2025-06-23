@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"> 
-
+        <link rel="stylesheet" href="{{ asset('css/aboutus.css') }}">
 @include('navbar')
 {{-- clock Feature --}}
 <div id="clock" class="clock-widget"></div>
@@ -69,6 +69,41 @@
 </a>
     </div>
 </div>
+    <!--FOOTER-->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2 style="color: #facc15">Rent<span style="color: #ffffff">n</span>Go</h2>
+                <p>Your trusted car rental partner in Malaysia.</p>
+            </div>
+
+            <div class="footer-links">
+                <div>
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Contact</a></li>   
+                    </ul>
+                </div>
+                <div>
+                    <h4>Follow Us</h4>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 RentnGo. All rights reserved.</p>
+        </div>
+    </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>

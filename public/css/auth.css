@@ -1,0 +1,1049 @@
+/* ─── Global Reset ─── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #F7F9FF;
+}
+
+/* ─── 1) Header (fixed) ─── */
+.header-admin {
+  position: fixed;     /* Keep header at the very top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.header-main {
+  height: 88px;
+  background: #00044A;
+  display: flex;
+  align-items: center;
+  padding-left: 32px;
+}
+
+.header-accent {
+  height: 14px;
+  background: #FFBF1C;
+}
+
+/* ─── 2) Logo, Hamburger & Nav Links ─── */
+/* Logo */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.rentngo-logo {
+  display: flex;
+  align-items: center;
+  background: #e9eaec;
+  border-radius: 40px;
+  padding: 0.1em 0.38em 0.2em 0.38em;
+  font-family: Audiowide;
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.logo-rent {
+  color: #FFBF1C;
+  font-family: Audiowide;
+  font-weight: 700;
+}
+
+.logo-n {
+  color: #fff;
+  font-family: Audiowide;
+  font-weight: 700;
+}
+
+.logo-go {
+  color: #002244;
+  font-family: inherit;
+  font-weight: 700;
+}
+
+/* Hamburger (hidden on desktop) */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  margin-left: auto;
+  padding-right: 32px;
+}
+
+/* Nav Links (desktop default) */
+.navbar-links {
+  margin-left: auto;
+  padding-right: 32px;
+}
+
+.navbar-links ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.navbar-links ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s;
+  font-family: 'Inter', sans-serif;
+}
+
+.navbar-links ul li a:hover {
+  color: #FFBF1C;
+}
+
+/* ─── 3) Responsive Menu (≤768px) ─── */
+@media (max-width: 768px) {
+  /* Show hamburger on mobile */
+  .hamburger {
+    display: block;
+  }
+
+  /* Hide desktop links; show mobile-styled menu instead */
+  .navbar-links {
+    position: absolute;
+    top: 88px;          /* directly below .header-main */
+    left: 0;
+    right: 0;
+    background: #00044A;
+    display: none;      /* hidden by default */
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    z-index: 999;       /* above page‐content */
+  }
+
+  .navbar-links ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .navbar-links ul li a {
+    font-size: 1.2rem;
+  }
+
+  /* When JavaScript toggles .active, display menu */
+  .navbar-links.active {
+    display: flex;
+  }
+}
+
+/* ─── 4) “Push Content Down” Wrapper ─── */
+/* Because header-main (88px) + header-accent (14px) = 102px,
+   we give .page-content exactly margin-top: 102px to sit below it. */
+
+.page-content {
+  margin-top: 102px;
+}
+
+/* ─── 5) Main .container (example) ─── */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  min-height: 80vh;
+}
+
+/* ─── 6) Hero Section & Role Selection (example) ─── */
+.hero-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-title-container {
+  padding-top: 20px;
+  margin-bottom: 2rem;
+}
+
+.hero-title {
+  color: #00044A;
+  font-family: 'Konkhmer Sleokchher', cursive;
+  font-size: 58px;
+  font-weight: 590;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.hero-title .highlight {
+  color: #FFBF1C;
+  display: inline-block;
+}
+
+.hero-subtitle-wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 1.5rem;
+  opacity: 0.8;
+}
+
+.hero-subtitle {
+  color: #333;
+  font-style: italic;
+  font-size: 14px;
+  font-family: 'Arimo', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding-top: 2rem;
+}
+
+.hero-image {
+  width: 500px;
+  max-width: 100%;
+  height: auto;
+  margin-top: 1rem;
+  margin-right: 40px;
+}
+
+.role-selection {
+  background: white;
+  margin-bottom: 3rem;
+  padding: 4rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 474px;
+  align-self: center;
+  margin-left: 3rem;
+}
+
+.role-selection h2 {
+  text-align: center;
+  font-family: 'Konkhmer Sleokchher';
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.role-selection p {
+  text-align: center;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.role-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.role-card {
+  flex: 1;
+  padding: 1rem;
+  border-radius: 16px;
+  border: 1px solid #FFBF1C;
+  background: rgba(255, 191, 28, 0.06);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.role-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 191, 28, 0.1);
+}
+
+.role-card i {
+  margin-bottom: 1rem;
+  font-size: 54px;
+  color: #FFBF1C;
+}
+
+.role-card span {
+  color: #FFBF1C;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.continue-btn {
+  width: 100%;
+  padding: 1rem;
+  background: #FFBF1C;
+  border: none;
+  border-radius: 16px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.continue-btn:hover {
+  background: #e6ac18;
+}
+
+.register-link {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.register-link a {
+  color: #FFBF1C;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+/* ─── 7) Responsive Adjustments (≤768px) ─── */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2rem 1rem;
+    max-width: 100%;
+  }
+
+  .hero-section,
+  .role-selection {
+    width: 100%;
+    margin: 0;
+    flex: none; /* Prevent flex children from growing */
+  }
+
+  .hero-section {
+    max-width: 100vw;
+    padding-bottom: 2rem;
+    flex: none;
+  }
+
+  .role-selection {
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 30px;
+    box-sizing: border-box;
+  }
+
+  .hero-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 1rem 0 0 0;
+  }
+
+  .role-options {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .role-card {
+    width: 100%;
+  }
+
+  .continue-btn {
+    font-size: 1rem;
+  }
+}
+
+/* ─── 8) Admin Login Background Container ─── */
+.admin-bg-container {
+  /* No need for margin-top here, because .page-content is already pushed down */
+  width: 100vw;
+  height: calc(100vh - 102px); /* Full viewport minus header */
+  background: linear-gradient(135deg, #f7f9ff 0%, #e0e7ff 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.admin-container {
+  position: relative;
+  z-index: 11;
+  background: #fff;
+  border-radius: 32px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  padding: 3rem 2rem;
+  min-width: 340px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.admin-login-form-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.admin-login-form-desc {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.admin-login-form label {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.admin-login-form-input {
+  width: 100%;
+  margin-top: 0.3rem;
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.admin-login-form-password-wrapper {
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.admin-login-form-eye {
+  position: absolute;
+  right: 12px;
+  top: 34px;
+  cursor: pointer;
+  color: #888;
+}
+
+.admin-login-form-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.admin-login-form-remember {
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+}
+
+.admin-login-form-forgot {
+  color: #FFBF1C;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.admin-login-form-forgot:hover {
+  text-decoration: underline;
+}
+
+.admin-login-form-btn {
+  width: 100%;
+  margin-bottom: 1.2rem;
+  padding: 1rem;
+  background: #FFBF1C;
+  border: none;
+  border-radius: 16px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.admin-login-form-btn:hover {
+  background: #e6ac18;
+}
+
+.admin-login-form-register {
+  text-align: center;
+}
+
+.admin-login-form-register a {
+  color: #FFBF1C;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+.admin-login-form-register a:hover {
+  text-decoration: underline;
+}
+
+/* ─── 9) Register Page Styles ─── */
+.register-main-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background: #f7faff;
+  padding: 1rem; /* header + safe space */
+  gap: 2rem;
+}
+
+/* …rest of the register styles remain the same (no margin-top needed) … */
+
+.register-card {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+}
+
+.register-card-content {
+  background: #fff;
+  border-radius: 30px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.register-icon {
+  margin-bottom: 1rem;
+  font-size: 2.2rem;
+}
+
+.register-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.register-subtitle {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 1.3rem;
+  text-align: center;
+}
+
+.register-signin-link {
+  color: #FFBF1C;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.register-signin-link:hover {
+  text-decoration: underline;
+}
+
+.register-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.register-form label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-top: 0.4rem;
+}
+
+.register-input {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border-radius: 14px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background: #f9fafd;
+  transition: border 0.2s;
+}
+
+.register-input:focus {
+  border: 1.5px solid #FFBF1C;
+  outline: none;
+}
+
+.register-password-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.register-eye {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #888;
+  display: flex;
+  align-items: center;
+}
+
+.register-btn {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.85rem;
+  background: #FFBF1C;
+  border: none;
+  border-radius: 24px;
+  color: white;
+  font-weight: bold;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.register-btn:hover {
+  background: #e6ac18;
+}
+
+.register-marketing {
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1.5rem;
+}
+
+.register-marketing-title {
+  font-family: 'Konkhmer Sleokchher', cursive;
+  font-size: 58px;
+  font-weight: 590;
+  line-height: 1.2;
+  color: #002244;
+  margin-bottom: 0.5rem;
+}
+
+.register-marketing-highlight {
+  color: #FFBF1C;
+}
+
+.register-marketing-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.register-feature-title {
+  font-weight: 700;
+  color: #002244;
+  font-size: 1rem;
+}
+
+.register-feature-desc {
+  color: #333;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* ─── 10) Register Page Responsive (≤1024px & ≤900px) ─── */
+@media (max-width: 1024px) {
+  .register-main-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 1.2rem 1rem;
+  }
+
+  .register-marketing {
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .register-card-content {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .register-main-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 1.2rem 1rem;
+    gap: 2rem;
+  }
+
+  .register-card,
+  .register-marketing {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .register-marketing {
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem 0;
+  }
+}
+
+/* ─── 11) Customer Login Form Styles ─── */
+.customer-container {
+  /* No need for extra margin-top here; .page-content already handles it */
+  position: relative;
+  z-index: 11;
+  background: #fff;
+  border-radius: 32px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.10);
+  padding: 2.5rem 2rem;
+  min-width: 320px;
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.customer-login-form-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.3rem;
+  color: #002244;
+}
+
+.customer-login-form-desc {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #444;
+  font-size: 1rem;
+}
+
+.customer-login-form label {
+  font-size: 0.97rem;
+  font-weight: 500;
+  margin-top: 0.4rem;
+  margin-bottom: 0.1rem;
+}
+
+.customer-login-form-input {
+  width: 100%;
+  margin-top: 0.3rem;
+  padding: 0.7rem 1rem;
+  border-radius: 14px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  background: #f9fafd;
+  transition: border 0.2s;
+}
+
+.customer-login-form-input:focus {
+  border: 1.5px solid #FFBF1C;
+  outline: none;
+}
+
+.customer-login-form-password-wrapper {
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.customer-login-form-eye {
+  position: absolute;
+  right: 12px;
+  top: 34px;
+  cursor: pointer;
+  color: #888;
+}
+
+.customer-login-form-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+}
+
+.customer-login-form-remember {
+  font-size: 0.97rem;
+  display: flex;
+  align-items: center;
+}
+
+.customer-login-form-forgot {
+  color: #FFBF1C;
+  font-weight: 600;
+  font-size: 0.97rem;
+  text-decoration: none;
+  margin-left: 0.5rem;
+}
+
+.customer-login-form-forgot:hover {
+  text-decoration: underline;
+}
+
+.customer-login-form-btn {
+  width: 100%;
+  margin-bottom: 1.2rem;
+  padding: 1rem;
+  background: #FFBF1C;
+  border: none;
+  border-radius: 16px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.customer-login-form-btn:hover {
+  background: #e6ac18;
+}
+
+.customer-login-form-register {
+  text-align: center;
+}
+
+.customer-login-form-register a {
+  color: #FFBF1C;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+.customer-login-form-register a:hover {
+  text-decoration: underline;
+}
+
+/* ─── 12) Forgot Password Styles ─── */
+.forgot-main-container {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f7f9ff 0%, #e0e7ff 100%);
+  padding: 1rem; 
+}
+
+.forgot-card {
+  background: #fff;
+  border-radius: 32px;
+  border: 1.5px solid #bfc8e6;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+  padding: 2.5rem 2.5rem 2.2rem 2.5rem;
+  min-width: 340px;
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.forgot-icon {
+  margin-bottom: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.forgot-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.2rem;
+  color: #002244;
+}
+
+.forgot-desc {
+  margin-bottom: 1.2rem;
+  text-align: center;
+  color: #444;
+  font-size: 1rem;
+}
+
+.forgot-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.forgot-form label {
+  font-size: 0.97rem;
+  font-weight: 500;
+  margin-bottom: 0.1rem;
+  align-self: flex-start;
+}
+
+.forgot-input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border-radius: 14px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background: #f9fafd;
+  transition: border 0.2s;
+  margin-bottom: 0.5rem;
+}
+
+.forgot-input:focus {
+  border: 1.5px solid #FFBF1C;
+  outline: none;
+}
+
+.forgot-btn {
+  width: 60%;
+  margin-top: 0.5rem;
+  padding: 0.7rem 0;
+  background: #FFBF1C;
+  border: none;
+  border-radius: 16px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 1.05rem;
+}
+
+.forgot-btn:hover {
+  background: #e6ac18;
+}
+
+.forgot-back-btn {
+  margin-top: 0.5rem;
+  background: none;
+  border: 1.5px solid #FFBF1C;
+  color: #FFBF1C;
+  border-radius: 16px;
+  padding: 0.7rem 2.2rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.forgot-back-btn:hover {
+  background: #FFBF1C;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .forgot-card {
+    padding: 1.2rem 0.5rem;
+    border-radius: 18px;
+    max-width: 98vw;
+  }
+
+  .forgot-title {
+    font-size: 1.1rem;
+  }
+
+  .forgot-btn {
+    width: 100%;
+  }
+}
+
+/* ─── 13) verify_admin_code Styles (if used) ─── */
+.verify-main-container {
+  background: linear-gradient(135deg, #f7f9ff 0%, #e0e7ff 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 102px);
+  padding: 1rem; /* small uniform padding instead */
+}
+
+
+@media (max-width: 1024px) {
+  .verify-main-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 1rem 1rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .verify-main-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 1rem 1.2rem 1rem;
+    gap: 2rem;
+  }
+  .register-card,
+  .register-marketing {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .register-marketing {
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem 0;
+  }
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,0.5);
+}
+.modal-content {
+  background-color:#f44336;
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  color: white;
+}
+
+.close-btn {
+  color: white;
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.close-btn:hover {
+  color: #000;
+}
+
+
+.reset-password-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.reset-toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  user-select: none;
+}

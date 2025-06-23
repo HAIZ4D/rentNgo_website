@@ -1,0 +1,455 @@
+
+        .car-container {
+            display: flex;
+            flex-direction: row;
+            gap: 0px;
+            justify-content: center;
+            flex-wrap: nowrap;
+            margin: 10px;
+            padding: 10px
+        }
+
+        .car-box {
+            width: 200px;
+            padding: 20px;
+            border-radius: 20px;
+            background-color: white;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Modal background overlay */
+        .modal {
+            display: none;
+            /* Initially hidden */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+
+            /* Center content */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Modal box */
+        .modal-content {
+            background-color: white;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+            position: relative;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Close button */
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+
+        .car-title {
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 22px;
+            color: #333;
+        }
+
+        .car-details p {
+            margin: 10px 0;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .car-details strong {
+            color: #000;
+        }
+
+        
+        .car-card {
+            min-width: 30px;
+            flex: 0 0 auto;
+            background: white;
+            border-radius: 5px box-shadow 0 2px 8px rgba(0, 0, 0, 0.05);
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        footer.footer {
+            background-color: #0f3175;
+            padding: 40px 20px;
+            font-family: 'Segoe UI', sans-serif;
+            color: #ffffff;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: auto;
+            gap: 40px;
+        }
+
+        .footer-brand {
+            flex: 1 1 250px;
+        }
+
+        .footer-brand h2 {
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex: 2 1 500px;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .footer-links h4 {
+            margin-bottom: 10px;
+            color: #facc15;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links ul li a {
+            text-decoration: none;
+            color: #bcbcbc;
+            transition: color 0.2s ease-in-out;
+        }
+
+        .footer-links ul li a:hover {
+            color: #ffffff;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            font-size: 14px;
+            color: #ffffff;
+        }
+
+        /*--------------------------------------------------------------
+# Team
+--------------------------------------------------------------*/
+
+        .team {
+            padding: 60px 0;
+        }
+
+        .team .member {
+            margin-bottom: 20px;
+            overflow: hidden;
+            border-radius: 4px;
+            background: #fff;
+            box-shadow: 0px 2px 15px rgba(16, 110, 234, 0.15);
+        }
+
+        .team .member .member-img {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team .member .social {
+            position: absolute;
+            left: 0;
+            bottom: 30px;
+            right: 0;
+            opacity: 0;
+            transition: ease-in-out 0.3s;
+            text-align: center;
+        }
+
+        .team .member .social a {
+            transition: color 0.3s;
+            color: #222222;
+            margin: 0 3px;
+            padding-top: 7px;
+            border-radius: 4px;
+            width: 36px;
+            height: 36px;
+            background: rgba(16, 110, 234, 0.8);
+            display: inline-block;
+            transition: ease-in-out 0.3s;
+            color: #fff;
+        }
+
+        .team .member .social a:hover {
+            background: #3b8af2;
+        }
+
+        .team .member .social i {
+            font-size: 18px;
+        }
+
+        .team .member .member-info {
+            padding: 10px 10px;
+        }
+
+        .team .member .member-info h4 {
+            font-weight: 700;
+            margin-bottom: 5px;
+            font-size: 18px;
+            color: #222222;
+        }
+
+        .team .member .member-info span {
+            display: block;
+            font-size: 13px;
+            font-weight: 400;
+            color: #aaaaaa;
+        }
+
+        .team .member .member-info p {
+            font-style: italic;
+            font-size: 14px;
+            line-height: 26px;
+            color: #777777;
+        }
+
+        .team .member:hover .social {
+            opacity: 1;
+            bottom: 15px;
+        }
+
+/* Add this in your aboutus.css */
+.member {
+    transition: transform 0.3s ease;
+}
+.member:hover {
+    transform: scale(1.03);
+}
+
+
+        .section-bg {
+            background-color: #f6f9fe;
+        }
+
+        .container {
+            position: relative;
+        }
+
+
+        .image-container img {
+            margin: 10px;
+        }
+
+        /* about us */
+        .about-container {
+    max-width: 1280px; /* similar to max-w-8xl */
+    margin: 1rem auto 0 auto;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 20px; /* rounded-1xl */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* shadow-lg */
+    text-align: center;
+}
+
+.about-title {
+    font-size: 30px;
+    font-weight: bold;
+    color: #0f3175;
+}
+
+.highlight-text {
+    color: #facc15;
+}
+
+.about-image {
+    width: 900px;
+    height: 600px;
+    object-fit: cover;
+}
+
+.about-description {
+    text-align: justify;
+    text-align-last: left;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #333;
+}
+
+/* promo  */
+.car-slider-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding: 20px 40px;
+}
+
+.car-slider {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+}
+
+.promo-card {
+    flex-shrink: 0;
+    min-width: 450px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.promo-img-wrapper {
+    margin-bottom: 15px;
+}
+
+.promo-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.promo-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0f3175;
+    margin: 10px 0 5px;
+}
+
+.promo-subtitle {
+    font-size: 16px;
+    color: #555;
+}
+
+.promo-dates {
+    margin-top: 10px;
+    color: #888;
+}
+
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #0f3175;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 50%;
+    z-index: 10;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.slider-arrow:hover {
+    opacity: 1;
+}
+
+.slider-arrow.left {
+    left: 0;
+}
+
+.slider-arrow.right {
+    right: 0;
+}
+
+.contact-container {
+    max-width: 1280px;
+    margin: 40px auto;
+    background-color: white;
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.contact-title {
+    font-size: 30px;
+    font-weight: bold;
+    color: #0f3175;
+}
+
+.highlight-text {
+    color: #facc15;
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: left;
+    margin-top: 40px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.contact-box h2 {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.contact-box p {
+    font-size: 16px;
+    color: #333;
+}
+
+.contact-info-note {
+    margin-top: 32px;
+}
+
+.note-title {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.note-sub {
+    margin-top: 8px;
+    color: #4B5563; /* Similar to Tailwind's text-gray-600 */
+    font-size: 14px;
+}
+
+.order-link {
+    color: #1D4ED8; /* Similar to Tailwind's text-blue-700 */
+    text-decoration: underline;
+}
+.location-container {
+    max-width: 1280px;
+    margin: 40px auto;
+    background-color: white;
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.location-title {
+    font-size: 30px;
+    font-weight: bold;
+    color: #0f3175;
+}
+
+.highlight-text {
+    color: #facc15;
+}
+
+.map-container {
+    max-width: 100%;
+    margin: 0 auto;
+}

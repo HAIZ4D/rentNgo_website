@@ -1,0 +1,174 @@
+/* clock css */
+.clock-widget {
+    position: absolute;
+    top: 120px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-size: 20px;
+    font-weight: bold;
+    color: #2c3e50;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    z-index: 999;
+    transition: all 0.3s ease-in-out;
+}
+.clock-widget:hover {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* date  */
+
+.date-bar {
+    background-color: #f5f5f5;
+    border: 7px solid #001e44;
+    border-radius: 50px;
+    padding: 5px 5px;
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.date-divider {
+    width: 1px;
+    height: 40px;
+    background-color: #001e44;
+    margin: 0 10px;
+}
+
+.date-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.date-section input {
+    border: none;
+    background: transparent;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #001e44;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+    width: 100%;
+}
+
+.date-section input:focus {
+    outline: none;
+    border-bottom: 1px solid #001e44;
+}
+
+.search-icon {
+    background-color: #001e44;
+    color: #fff;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    transition: background-color 0.3s ease;
+}
+
+.search-icon:hover {
+    background-color: #003366;
+}
+
+.car-card {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.car-card img {
+    height: 200px; 
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.car-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-title {
+    color: #001e44;
+}
+
+.flatpickr-calendar {
+    font-family: 'Segoe UI', sans-serif;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+
+.btn-view {
+    background: #0d1b4c;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.btn-view:hover {
+    background: #1e2e78;
+}
+
+
+@media (max-width: 768px) {
+    .date-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+@media (max-width: 768px) {
+    .car-card {
+        width: 90%;
+        height: auto;
+    }
+}
+
+.floating-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #0d1b4c; /* Green for chat */
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    text-decoration: none;
+    font-size: 24px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    z-index: 1000;
+}
+
+.floating-btn:hover {
+    background-color: #F9C644; /* Darker green on hover */
+    transform: scale(1.1);
+}
+

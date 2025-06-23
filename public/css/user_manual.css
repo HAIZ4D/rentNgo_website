@@ -1,0 +1,119 @@
+.manual-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2.5rem;
+    background: linear-gradient(to bottom right, #f5f8fb, #f9f9f9);
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    counter-reset: section;
+}
+
+.manual-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #00074a;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-bottom: 3px solid #00074a;
+    padding-bottom: 0.5rem;
+}
+
+.manual-title i {
+    color: #F7B500;
+    font-size: 1.8rem;
+}
+
+.manual-section {
+    background: linear-gradient(to right, #ffffff, #f0f4f9);
+    border-left: 6px solid #00074a;
+    padding: 1.8rem 2rem;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease;
+}
+
+.manual-section:hover {
+    transform: translateY(-4px);
+}
+
+.manual-section h2 {
+    font-size: 1.4rem;
+    color: #00074a;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding-left: 3rem;
+    position: relative;
+}
+
+.manual-section h2::before {
+    content: counter(section);
+    counter-increment: section;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #F7B500;
+    color: white;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 2.2rem;
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0 0 0 3px #fff;
+}
+
+.manual-section ul {
+    padding-left: 1.5rem;
+    list-style-type: none;
+}
+
+.manual-section li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.7rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+.manual-section li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6rem;
+    width: 8px;
+    height: 8px;
+    background-color: #00074a;
+    border-radius: 50%;
+}
+
+.manual-section li strong {
+    color: black;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .manual-container {
+        padding: 1.2rem;
+    }
+
+    .manual-title {
+        font-size: 1.7rem;
+    }
+
+    .manual-section h2 {
+        font-size: 1.2rem;
+    }
+
+    .manual-section h2::before {
+        width: 2rem;
+        height: 2rem;
+        line-height: 2rem;
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,72 @@
+.navbar {
+    padding: 20px 0;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between; /* distribute logo + nav */
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    width: 50px;
+}
+
+/* NEW: Add left margin to nav links to bring them closer to center */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin-left: 80px; /* shift links a bit toward center */
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+.yellow-bar {
+    height: 8px;
+    background-color: #F9C644; /* yellow */
+}
+
+.nav-button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    text-decoration: underline;
+}
+.nav-button:hover {
+    color: #ccc;
+}
+
+.navbar-nav .nav-link {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.custom-navbar {
+    background-color: #00074a; 
+}
+
+.custom-navbar .nav-link,
+.custom-navbar .navbar-brand {
+    color: white !important;
+}
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5); /* optional: white border */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255,255,255,1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}

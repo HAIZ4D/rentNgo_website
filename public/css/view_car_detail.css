@@ -1,0 +1,151 @@
+.full-car-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2rem;
+    margin: 2rem auto;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    max-width: 100%;
+    width: 95vw;
+    gap: 3rem;
+}
+
+.car-details, .car-pricing {
+    flex: 1 1 45%;
+    min-width: 300px;
+}
+
+.car-image-container {
+    width: 100%;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible; /* Let image flow naturally */
+    margin-bottom: 1rem;
+}
+
+.car-image {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.car-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.car-specs {
+    list-style: none;
+    padding: 0;
+    font-size: 1rem;
+}
+
+.car-specs li {
+    margin: 0.6rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.car-specs i {
+    margin-right: 0.8rem;
+    color: #444;
+}
+
+.included-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+.included-list li {
+    margin: 0.5rem 0;
+}
+
+.cost-info h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.price {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #0d1b4c;
+    margin-bottom: 1.5rem;
+}
+
+.good-choice h3 {
+    margin-bottom: 0.5rem;
+}
+
+.good-choice ul {
+    padding-left: 1.5rem;
+    font-size: 1rem;
+}
+
+.green-text {
+    color: green;
+    font-weight: bold;
+}
+
+.button-group {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn-book, .btn-back {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.btn-book {
+    background: #0d1b4c;
+    color: #fff;
+}
+
+.btn-book:hover {
+    background: #1e2e78;
+}
+
+.btn-back {
+    background: #ccc;
+    color: #000;
+}
+
+.btn-back:hover {
+    background: #aaa;
+}
+
+/* Responsive tweaks */
+@media screen and (max-width: 768px) {
+    .full-car-card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button-group {
+        flex-direction: column;
+        width: 100%;
+        align-items: stretch;
+    }
+
+    .btn-book, .btn-back {
+        width: 100%;
+        text-align: center;
+    }
+}
